@@ -1,0 +1,13 @@
+apiVersion: manifest.k8s.io/v1alpha1
+kind: Manifest
+metadata:
+  name: ldap
+description: LDAP Deployment.
+resources:
+- deployment.yaml
+- service.yaml
+genericSecrets:
+- name: ldap-secret
+  files:
+    - env.yaml
+    - env.startup.yaml
